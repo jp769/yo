@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    
+    </style>
+</head>
+<body>
+  <script>
+    // throw alert depending on what is wrong, use the true/false to throw or maybe you can throw when you check. Depends how the
+    // prof wants it, maybe one alert with whatever is wrong
+    // add the regex when checking the other stuff and the length or whatever other parameters are needed
+    // dont forget your css and keep the labels and stuff in one form, for buttons/text boxes/labels just mess with the css
+          const landscapers = [{first:"Jon", last: "Sins", id: "0123", pw:"password"}, 
+                              {first:"John", last: "Cena", id: "01233", pw:"password2"} 
+                          ];
+
+          function checkName(){
+            firstName = document.getElementById("firstName").value;
+            lastName = document.getElementById("lastName").value;
+            userUsername = firstName + " " + lastName;
+
+            for(let person in landscapers){
+              if(landscapers[person]["first"] === firstName && landscapers[person]["last"] === lastName){
+                // alert("Signed in");
+                return true;
+              }
+            }
+            // alert("Not signed in");
+            return false;
+          }
+
+          function checkPW(){
+            userPW = document.getElementById("psw").value;
+            return true;
+          }
+
+          function checkEmail(){
+            userEmail = document.getElementById("userEmail").value;
+            return true;
+          }
+
+          function checkID(){
+            userID = document.getElementById("userID").value;
+            return true;
+          }
+
+          function validation(){      
+          var firstName, lastName, userUsername, userID, userPW, userEmail;  
+
+          const nameBool = checkName(), pwBool = checkPW(), emailBool = checkEmail(), idBool = checkID();
+          }
+  </script>
+
+  <h1>Yo Testing</h1>
+  <div class="container">
+      <form id="form1" onsubmit="validation();">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName">
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName">
+    
+        <label for="psw">Password</label>
+        <input type="password" id="psw" name="psw">
+
+        <label for="userID">ID</label>
+        <input type="text" id="userID" name="userID">
+    
+        <label for="userEmail">Email</label>
+        <input type="text" id="userEmail" name="userEmail">
+
+        <input type="submit" id="submit" value="Submit">
+        <input type="reset" id="reset" value="Reset">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
